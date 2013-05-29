@@ -3,49 +3,80 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <script src="javascripts/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>San-cran-mix by danny8000</title>
-    <style>
-      #s1, #s2 {
-        text-transform:capitalize;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <h1>San-cran-mix</h1>
-        <section id="downloads">
-          <a href="https://github.com/danny8000/san-cran-mix/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/danny8000/san-cran-mix/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/danny8000/san-cran-mix" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
+    <link href='http://fonts.googleapis.com/css?family=Knewave' rel='stylesheet' type='text/css'>
+  <style>
+html, body {
+	height: 100%;
+}
 
-    <div class="container">
-      <section id="main_content">
-        <h1><span id="s1"></span> <span id="s2"></span></h1>
-        
-        <script>
-          var syllablesList = ['san', 'fran', 'cis', 'co', 'scott', 'cran', 'fill', 'sco', 'scran'];
-          function randBetween(low,high) {
-            return Math.floor((Math.random()*high)+low);
-          }
-          
-          var word1 = syllablesList[randBetween(0,8)];
-          var word2 = syllablesList[randBetween(0,8)] + syllablesList[randBetween(0,8)] + syllablesList[randBetween(0,8)];
-          
-          //$('#s1').html(word1.charAt(0).toUpperCase());
-          $('#s1').html(word1);
-          $('#s2').html(word2);
-        </script>
+body {
+	background-color: #5A82FE;
+	color: #fff;
+	font-family: Helvetica, Arial, sans-serif;
+	background-image: url(static/img/background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 
-        <p><em>(Click refresh to get a new name for Scott.)<em></p>
+h1, h2 {
+	font-family: Knewave, cursive;
+	text-align: center;
+  text-shadow: 1px 1px 1px #000;
+}
+h1 {
+  font-size: 80px;
+  line-height: 80px;
+}
+h2 {
+  font-size: 50px;
+  line-height: 50px;
+  margin-bottom: 10px;
+}
+p {
+	font-size: 80%;
+}
+a, a:visited {
+	color: #fff;
+}
 
-      </section>
-    </div>
-  </body>
+h1 {
+	text-transform: uppercase; /* capitalize; */
+}
+	</style>
+  <script>
+    /* Custom Functions */
+function shuffle(o){ //v1.0
+    for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+};
+    </script>
+    </head>
+    <body>
+<script>
+      var syllablesList = ['san', 'fran', 'cis', 'co', 'scott', 'cran', 'fill', 'sco', 'scran'];
+      //var numSyllables = syllablesList.length;
+      var syllablesList = shuffle(syllablesList);
+      console.log(syllablesList);
+    </script>
+<div style="height: 90%">
+    <h2>Welcome to</h2>
+		<h1>
+			<script>
+            document.write(syllablesList[0]);
+      </script> 
+			
+			<script>
+            document.write(syllablesList[1]);
+            document.write(syllablesList[2]);
+            document.write(syllablesList[3]);
+      </script> 
+		</h1>
+	</div>
+<div style="height: 90%">
+		<p style="text-align:center;"><em>(Click refresh to get a new name for Scott.)</em></p>
+		<p style="text-align:center;"><a href="https://github.com/danny8000/san-cran-mix">View on GitHub</a></p>
+	</div>
+</body>
 </html>
