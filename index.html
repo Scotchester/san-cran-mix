@@ -7,6 +7,11 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <script src="javascripts/jquery.min.js"></script>
     <title>San-cran-mix by danny8000</title>
+    <style>
+      #s1, #s2 {
+        text-transform:capitalize;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -22,18 +27,20 @@
 
     <div class="container">
       <section id="main_content">
-        <h1><span id="s1"></span> <span id="s2"></span><span id="s3"></span><span id="s4"></span></h1>
+        <h1><span id="s1"></span> <span id="s2"></span></h1>
         
         <script>
-          var syllablesList = ['San', 'Fran', 'cis', 'co', 'Scott', 'Cran', 'fill', 'sco', 'Scran'];
-          console.log(syllablesList[0]);
-
-          for (var i=1; i<5; i++) {
-
-            var selector = Math.floor(Math.random()*9);
-             console.log(selector);
-            $('#s' + i).html(syllablesList[selector]);
+          var syllablesList = ['san', 'fran', 'cis', 'co', 'scott', 'cran', 'fill', 'sco', 'scran'];
+          function randBetween(low,high) {
+            return Math.floor((Math.random()*high)+low);
           }
+          
+          var word1 = syllablesList[randBetween(0,8)];
+          var word2 = syllablesList[randBetween(0,8)] + syllablesList[randBetween(0,8)] + syllablesList[randBetween(0,8)];
+          
+          //$('#s1').html(word1.charAt(0).toUpperCase());
+          $('#s1').html(word1);
+          $('#s2').html(word2);
         </script>
 
         <p><em>(Click refresh to get a new name for Scott.)<em></p>
